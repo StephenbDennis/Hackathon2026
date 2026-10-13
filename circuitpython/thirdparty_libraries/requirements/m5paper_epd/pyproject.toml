@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2026 Freyr86
+#
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+    "setuptools-scm",
+]
+
+[project]
+name = "circuitpython-m5paper-epd"
+description = "CircuitPython graphics library for the M5Stack M5Paper IT8951 e-paper."
+version = "0.3.0"
+readme = "README.md"
+authors = [
+    {name = "Freyr86", email = "Freyr86@users.noreply.github.com"}
+]
+urls = {Homepage = "https://github.com/Freyr86/m5paper_epd"}
+keywords = [
+    "m5paper",
+    "m5stack",
+    "it8951",
+    "gt911",
+    "touch",
+    "epaper",
+    "e-ink",
+    "display",
+    "graphics",
+    "hardware",
+    "circuitpython",
+]
+license = {text = "MIT"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Embedded Systems",
+    "Topic :: System :: Hardware",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["dependencies", "optional-dependencies"]
+
+# circuitpython-build-tools reads tool.setuptools.packages as a list.
+# Do NOT use packages.find here — it becomes a dict and breaks the Bundle CI.
+[tool.setuptools]
+packages = ["m5paper_epd"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {optional = {file = ["optional_requirements.txt"]}}

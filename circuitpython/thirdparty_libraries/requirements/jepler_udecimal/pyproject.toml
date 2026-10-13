@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2020 Diego Elio Pettenò
+#
+# SPDX-License-Identifier: Unlicense
+
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+    "setuptools_scm[toml]>=6.0",
+]
+
+[project]
+name = "jepler-circuitpython-udecimal"
+description = "Reduced version of the decimal library for CircuitPython"
+readme = "README.rst"
+authors = [
+    {name = "Jeff Epler", email = "jepler@unpythonic.net"}
+]
+urls = { Source = "https://github.com/jepler/Jepler_CircuitPython_udecimal", Documentation = "https://jepler-udecimal.readthedocs.io/en/latest/api/jepler_udecimal/index.html", Tracker = "https://github.com/jepler/Jepler_CircuitPython_udecimal/issues" }
+#    "Pull Requests" = "https://github.com/jepler/Jepler_CircuitPython_udecimal/pulls",
+keywords = [
+    "adafruit",
+    "blinka",
+    "circuitpython",
+    "micropython",
+    "udecimal",
+    "numeric",
+    "helper",
+    "arbitraryprecision",
+    "math",
+]
+license = "MIT"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Embedded Systems",
+    "Topic :: System :: Hardware",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+
+[tool.setuptools]
+packages=['jepler_udecimal']
+[tool.setuptools_scm]
+write_to = "jepler_udecimal/__version__.py"
